@@ -198,3 +198,26 @@ VALUES
  (7,'mark antony','huaman huari',15451042,990915420,'av. mariscal benavides'),
  (8,'mark antony','huaman huari',15451042,990915420,'av. mariscal benavides'),
  (9,'mark antony','huaman huari',15451042,990915420,'av. mariscal benavides');
+
+ CREATE VIEW nombre_ingre
+AS
+   SELECT apoderado.dir AS 'apoderado' , COUNT(apoderado.nombre_ingre) AS 'apoderado'
+    FROM Libro
+        INNER JOIN apoderado
+        ON ape_apod.nombre_ingre = ape_apod.nombre_ingre
+   GROUP BY ape_apod.nombre_ingre
+GO
+/* Ver registros de vista */
+SELECT *
+FROM apoderado
+GO
+
+SELECT*from infante
+CREATE VIEW  apoderado
+AS
+SELECT infante.nom_infa AS 'infante', COUNT(apoderado.cod_apo) AS 'infante'
+FROM infante
+INNER JOIN infante
+ON infante.nom_infa=nom_infa.ape_encar
+GROUP BY nom_infa.ape_apod
+GO
